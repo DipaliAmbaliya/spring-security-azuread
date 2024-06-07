@@ -1,0 +1,27 @@
+spring:
+  security:
+    oauth2:
+      client:
+        provider:
+          azure:
+            issuer-uri: https://login.microsoftonline.com/f4814d23-3835-4d87-a7dc-57a19c04684a/v2.0
+            user-name-attribute: name
+        registration:
+          azure-dev:
+            provider: azure
+            #client-id: "6035bfd4-22f0-437c-b76f-da729a916cbf"
+            #client-secret: "fo28Q~-aLbmQvonnZtzbgtSiqYstmBWEmGPAodmx"
+            client-id: "bcacde57-e5de-4fe7-871b-edfd5fd7962b"
+            client-secret: "JTI8Q~-2jNczauO9R9ZoNjGniCWUEgI.CQADXbnb"
+            scope:
+            - openid
+            - email
+            - profile
+
+# Group mapping
+azuread:
+  jwt:
+    authorization:
+      group-to-authorities:
+        "36758c23-2923-4d26-b01b-b521ebb7d59e": Dynamic-All-Group
+        "fd552853-a63c-49ec-83c5-14491837fc33": AzureADAdmin
